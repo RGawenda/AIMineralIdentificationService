@@ -6,10 +6,10 @@ rabbitmq_config = dict(
 )
 
 tensorflow_config = dict(
-    class_names=['agate', 'amethyst', 'azurite', 'calcite', 'chrysocolla', 'citrine', 'emerald', 'gypsum',
-                 'labradorite', 'malachite', 'opal', 'pyrite', 'quartz', 'ruby', 'smoky quartz', 'topaz', 'tourmaline',
-                 'turquoise', 'wulfenite'],
-    image_shape=(720,720),
+    class_names=['Agate', 'Amethyst', 'Azurite', 'Calcite', 'Chrysocolla', 'Citrine', 'Emerald', 'Gypsum',
+                 'Labradorite', 'Malachite', 'Opal', 'Pyrite', 'Quartz', 'Ruby', 'Smoky quartz', 'Topaz', 'Tourmaline',
+                 'Turquoise', 'Wulfenite'],
+    image_shape=(256, 256),
     num_classes=19,
-    model_path="model_50",
+    model_path="C:\\Users\\Roman\\jup\\inz_model\\model_transfer_xception_block"
 )

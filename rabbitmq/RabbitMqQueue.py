@@ -1,4 +1,3 @@
-
 import pika
 import json
 import config
@@ -26,7 +25,7 @@ class RabbitMqQueue:
         json_input = json.loads(body)
         json_input = json.loads(json_input)
 
-        image_to_proces = ImageToRecognitionMessage(json_input['authToken'], json_input['stringImage'])
+        image_to_proces = ImageToRecognitionMessage(json_input['classificationID'], json_input['imageBase64'])
         result = self.model.predict(image_to_proces)
         result_to_send = json.dumps(result.to_dict())
         result_to_send = json.dumps(result_to_send)
@@ -34,7 +33,7 @@ class RabbitMqQueue:
         self.send_message(result_to_send)
 
     def send_message(self, message):
-
+        print(message)
         channel = self.connection.channel()
         channel.queue_declare(queue=self.rabbit_config.get('queue_output'), durable=True)
 

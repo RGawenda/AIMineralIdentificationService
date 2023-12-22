@@ -1,5 +1,3 @@
-
-
 class ResultMessage:
     def __init__(self, name, result):
         self.user_name = name
@@ -7,6 +5,6 @@ class ResultMessage:
 
     def to_dict(self):
         return {
-            'authToken': self.user_name,
+            'classificationID': self.user_name,
             'predict': self.predict_result
         }
